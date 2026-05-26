@@ -1701,18 +1701,36 @@
 
 
 <h1 id="advanced-methods">Advanced Methods<a class="headerlink" href="#advanced-methods" title="Permanent link">¶</a></h1>
-<p>This page documents five advanced econometric methods that complement the main DiDiR analysis. Each method addresses a specific concern or deepens the understanding of the treatment effect.</p>
+<div class="admonition info">
+<p class="admonition-title">Where this sits in v8</p>
+<p>These five methods discipline the <strong>reduced-form benchmark layer</strong> — the
+difference-in-differences that the canonical v8 paper uses only for timing,
+sign, and approximate scale. The headline policy result is the
+<strong>structural price-formation decomposition</strong> and the <strong>static welfare
+comparison</strong> (<a href="../results/">Results</a>, <a href="../robustness/">Robustness</a>). Each
+method below also appears as a dedicated analysis page (HonestDiD →
+<a href="../analyses/an-006-honestdid/">AN-006</a>, Lee bounds →
+<a href="../analyses/an-005-lee-bounds/">AN-005</a>, quantile DiD →
+<a href="../analyses/an-007-quantile-did/">AN-007</a>, Gelbach decomposition →
+<a href="../analyses/an-008-gelbach-decomp/">AN-008</a>).</p>
+</div>
+<p>This page documents five econometric methods that discipline the reduced-form
+benchmark. Each addresses a specific concern about the timing-and-sign reading
+of the policy change.</p>
 <hr>
-<h2 id="1-parallel-trends-sensitivity-honestdid">1. Parallel Trends Sensitivity (HonestDiD)<a class="headerlink" href="#1-parallel-trends-sensitivity-honestdid" title="Permanent link">¶</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>Parallel trends is an assumption you cannot fully test — so instead of
-asserting it, HonestDiD asks how badly it would have to fail to
-overturn the result. The answer: the price effect stays significant
-even when the post-period trend is allowed to drift substantially
-from the pre-period path. The finding does not rest on a knife-edge
-belief that trends were exactly parallel.</p>
+<p>Five stress-tests on the reduced-form benchmark, each guarding a different
+flank. HonestDiD: the price effect survives even if parallel trends fails
+substantially. Lee bounds: selection on item completion barely moves it.
+Causal forest: the effect is broad-based, not driven by one exotic subgroup.
+Quantile DiD: competition bites hardest on cheap, standardized items and even
+reverses at the thin-market top. Gelbach: competition and composition partly
+cancel, so "more firms → lower prices" is only part of the story. None carries
+the headline — that is the structural decomposition — but together they keep
+the benchmark honest.</p>
 </div>
+<h2 id="1-parallel-trends-sensitivity-honestdid">1. Parallel Trends Sensitivity (HonestDiD)<a class="headerlink" href="#1-parallel-trends-sensitivity-honestdid" title="Permanent link">¶</a></h2>
 <p>The HonestDiD method (Rambachan and Roth, 2023) constructs robust confidence intervals for the treatment effect under controlled violations of the parallel trends assumption. The parameter <span class="arithmatex">\(\bar{M}\)</span> governs the maximum amount by which the post-treatment trend may deviate from the pre-treatment path.</p>
 <figure>
   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_11_honestdid.png" data-desc-position="bottom"><img src="../assets/figures/fig_11_honestdid.png" alt="HonestDiD sensitivity analysis"></a>
@@ -1725,15 +1743,6 @@ belief that trends were exactly parallel.</p>
 </div>
 <hr>
 <h2 id="2-sample-selection-correction-lee-bounds">2. Sample Selection Correction (Lee Bounds)<a class="headerlink" href="#2-sample-selection-correction-lee-bounds" title="Permanent link">¶</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Intuition (plain-language)</p>
-<p>Prices are only observed for items that were actually awarded, and if
-the policy changes which items complete, that selection could bias
-the estimate. Lee bounds handle the worst case by trimming the
-over-selected group from the relevant tail. The bounds for the price
-effect are tight (−0.131 to −0.123) — so selection on completion is,
-at most, a rounding-error concern here.</p>
-</div>
 <p>The price and distance regressions condition on item completion. If the treatment affects completion rates, this creates sample selection bias. Lee (2009) bounds correct for this by trimming the outcome distribution in the excess-selected cell.</p>
 <table>
 <thead>
@@ -1775,14 +1784,6 @@ at most, a rounding-error concern here.</p>
 </div>
 <hr>
 <h2 id="3-heterogeneous-treatment-effects-causal-forest">3. Heterogeneous Treatment Effects (Causal Forest)<a class="headerlink" href="#3-heterogeneous-treatment-effects-causal-forest" title="Permanent link">¶</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Intuition (plain-language)</p>
-<p>Rather than guessing which contracts react most, let a
-machine-learning forest hunt for heterogeneity on its own. It finds
-that item quantity matters most, but the spread of effects across
-contracts is modest and imprecisely estimated. Translation: the price
-effect is reasonably broad-based, not driven by one exotic subgroup.</p>
-</div>
 <p>A causal forest (Athey, Tibshirani, and Wager, 2019) estimates individualized treatment effects using an honest, doubly-robust random forest on FWL-residualized outcomes.</p>
 <h3 id="variable-importance">Variable Importance<a class="headerlink" href="#variable-importance" title="Permanent link">¶</a></h3>
 <figure>
@@ -1836,15 +1837,6 @@ effect is reasonably broad-based, not driven by one exotic subgroup.</p>
 </div>
 <hr>
 <h2 id="4-distributional-effects-quantile-did">4. Distributional Effects (Quantile DiD)<a class="headerlink" href="#4-distributional-effects-quantile-did" title="Permanent link">¶</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Intuition (plain-language)</p>
-<p>The average hides a sharp pattern. Competition bites hardest at the
-bottom of the price distribution — cheap, standardized items where
-many bidders bunch — and even reverses sign at the very top, where
-supplier markets are thin and items specialized. The set-aside's
-price penalty is concentrated in the bulk of ordinary contracts, not
-spread evenly across them.</p>
-</div>
 <p>Quantile difference-in-differences (Canay, 2011) estimates how the treatment effect varies across the price distribution, going beyond the mean effect captured by OLS.</p>
 <figure>
   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_14_quantile_did.png" data-desc-position="bottom"><img src="../assets/figures/fig_14_quantile_did.png" alt="Quantile DiD"></a>
@@ -1895,17 +1887,6 @@ spread evenly across them.</p>
 </div>
 <hr>
 <h2 id="5-mechanism-decomposition-gelbach">5. Mechanism Decomposition (Gelbach)<a class="headerlink" href="#5-mechanism-decomposition-gelbach" title="Permanent link">¶</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Intuition (plain-language)</p>
-<p>Why exactly do open tenders lower prices? Gelbach's decomposition
-splits the effect into observable channels, and two pull against each
-other: more competition pushes prices down, while the resulting shift
-toward non-SME winners pushes them back up through conditional
-pricing. They largely cancel, and most of the price effect runs
-through channels these two mediators do not capture — a useful
-warning that the simple "more firms, lower prices" story is
-incomplete.</p>
-</div>
 <p>The Gelbach (2016) decomposition partitions the total price effect into contributions from observable channels by comparing a "short" regression (treatment + controls) with a "full" regression that adds mediators.</p>
 <figure>
   <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_15_mediation.png" data-desc-position="bottom"><img src="../assets/figures/fig_15_mediation.png" alt="Gelbach decomposition"></a>
@@ -1964,6 +1945,9 @@ incomplete.</p>
 
 
 
+
+  
+  
 
 
 

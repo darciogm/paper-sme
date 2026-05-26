@@ -1825,14 +1825,15 @@ but reflect the <em>control groups'</em> gradual SME restriction rollout, not
 a group-65-specific shock — see
 <a href="../entry-thickens-pool/">H:entry-thickens-pool</a>.</p>
 <h2 id="setting-evidence">Setting evidence<a class="headerlink" href="#setting-evidence" title="Permanent link">¶</a></h2>
-<p>The pre-treatment period (Sep 2016–Feb 2018) is long enough to test
-trend stability. The placebo design uses Sep 2017 and Mar 2017 as fake
-treatment dates, splitting the pre-period into nominal "pre" and "post"
-halves while applying the same DiDiR specification.</p>
+<p>The pre-treatment period is long enough to test trend stability. The
+placebo design uses Sep 2017, Mar 2017, and Jun 2017 as fake treatment
+dates, splitting the pre-period into nominal "pre" and "post" halves
+while applying the same DiDiR specification.</p>
 <h2 id="empirical-test">Empirical test<a class="headerlink" href="#empirical-test" title="Permanent link">¶</a></h2>
 <ul>
-<li><em>Pre-treatment placebos</em>: DiDiR with fake treatment dates Sep 2017
-  and Mar 2017; price coefficient should be null.</li>
+<li><em>Pre-treatment placebos</em>: DiDiR with fake treatment dates Sep 2017,
+  Mar 2017, and Jun 2017; price coefficient should be small relative to
+  the real cutoff.</li>
 <li><em>HonestDiD</em>: Rambachan-Roth bounds on the post-treatment trend
   deviation; the price effect should remain significant for moderate M̄.</li>
 <li><em>Lee bounds</em>: Lee (2009) selection-bound formula applied to the
@@ -1862,7 +1863,7 @@ not to group 65 itself.</p>
 <tr>
 <td><a href="../../analyses/an-004-placebo-tests/">AN-004</a></td>
 <td>Supports</td>
-<td>Pre-treatment price placebo β = −0.0145 (Sep 2017) and +0.0206 (Mar 2017), p&gt;0.10 on the first, p&lt;0.10 on the second — small and not driving the main result.</td>
+<td>Pre-reform price placebos small and negative: β = −0.013 / −0.030 / −0.034 at Sep / Mar / Jun 2017, all far below the real-cutoff −0.108 to −0.142 range — not driving the main result.</td>
 </tr>
 <tr>
 <td><a href="../../analyses/an-005-lee-bounds/">AN-005</a></td>

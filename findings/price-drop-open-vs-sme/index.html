@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#open-auctions-cut-procurement-prices-by-13-in-switched-group-65" class="md-skip">
+        <a href="#open-auctions-cut-procurement-prices-by-1011-in-switched-group-65" class="md-skip">
           Skip to content
         </a>
       
@@ -1524,16 +1524,16 @@
                   
 
 
-<h1 id="open-auctions-cut-procurement-prices-by-13-in-switched-group-65">Open auctions cut procurement prices by ~13% in switched group 65<a class="headerlink" href="#open-auctions-cut-procurement-prices-by-13-in-switched-group-65" title="Permanent link">¶</a></h1>
+<h1 id="open-auctions-cut-procurement-prices-by-1011-in-switched-group-65">Open auctions cut procurement prices by ~10–11% in switched group 65<a class="headerlink" href="#open-auctions-cut-procurement-prices-by-1011-in-switched-group-65" title="Permanent link">¶</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>In a competitive tender the price is set by whoever is willing to go
-lowest, and many of the keenest price-cutters are non-SMEs. When
-São Paulo briefly let them bid for medical supplies and then shut the
-door again in March 2018, prices tracked the door: about 13% lower
-while open, higher once SME-only returned. The estimate barely moves
-whether you look 6, 12, or 18 months around the switch — the
-signature of a real policy effect rather than a passing trend.</p>
+<p>In a competitive tender the price is set by whoever goes lowest, and many of
+the keenest price-cutters are non-SMEs. When São Paulo briefly let them bid
+for medical supplies and then shut the door again in March 2018, prices
+tracked the door: about 10–11% lower while open, higher once SME-only
+returned. The estimate is stable across 6/12/18-month windows. The v8 paper
+uses this only to pin down timing and sign — the policy magnitude comes from
+the structural decomposition.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reduced-form motivation layer</p>
@@ -1547,18 +1547,20 @@ and
 </div>
 <p>🟡 In São Paulo's BEC procurement platform, opening switched group 65
 (medical/hospital supplies) to non-SME bidders before March 2018
-lowered negotiated prices by <strong>13.1–13.3%</strong> relative to the SME-only
-regime that followed, identified by a difference-in-differences-in-reverse
-(DiDiR) against control groups that were SME-only throughout
-(<a href="../../analyses/an-001-didir-prices/">AN-001</a>, 18-month window,
-item-clustered SEs, p&lt;0.01).</p>
+lowered negotiated prices by <strong>~10–11%</strong> relative to the SME-only
+regime that followed (v8 reduced-form benchmark β = −0.113, 18-month
+window, item-clustered SEs, p&lt;0.01), identified by a
+difference-in-differences-in-reverse (DiDiR) against control groups that
+were SME-only throughout (<a href="../../analyses/an-001-didir-prices/">AN-001</a>).
+The earlier v1–v4 pipeline gave a slightly larger −0.131 to −0.133; the
+v8 benchmark is the canonical number.</p>
 <p>The estimate is stable across 6/12/18-month windows around the March 2018
 PGE-SP legal reversal, robust to PBU fixed effects, and concentrated at
 the lower end of the conditional price distribution: quantile DiD finds
 the effect at <span class="arithmatex">\(\tau \leq 0.50\)</span> (β strongly negative) but reversing at
 <span class="arithmatex">\(\tau = 0.90\)</span> (<a href="../../analyses/an-007-quantile-did/">AN-007</a>). Lee
-(2009) selection bounds run a tight −0.131 to −0.123
-(<a href="../../analyses/an-005-lee-bounds/">AN-005</a>); HonestDiD CIs survive
+(2009) selection bounds are tight, confirming negligible completion-selection
+bias (<a href="../../analyses/an-005-lee-bounds/">AN-005</a>); HonestDiD CIs survive
 substantial M̄ violations (<a href="../../analyses/an-006-honestdid/">AN-006</a>);
 the pre-treatment placebo on prices is null
 (<a href="../../analyses/an-004-placebo-tests/">AN-004</a>).</p>
@@ -1600,6 +1602,9 @@ sample (cross-modality check; partly run, not yet documented as an AN).</p>
 
 
 
+
+  
+  
 
 
 

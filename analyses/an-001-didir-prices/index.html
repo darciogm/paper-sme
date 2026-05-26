@@ -1561,7 +1561,7 @@
 <h1 id="an-001-didir-price-effect">AN-001: DiDiR price effect<a class="headerlink" href="#an-001-didir-price-effect" title="Permanent link">¶</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>The cleanest evidence that the set-aside raises prices: when medical supplies were forced back into SME-only tendering in March 2018, their prices rose about 13% relative to groups that never changed. The estimate barely moves across 6/12/18-month windows — what you want from a real policy effect rather than noise.</p>
+<p>The cleanest reduced-form evidence that the set-aside raises prices: when medical supplies were forced back into SME-only tendering in March 2018, their prices rose about 10–11% relative to groups that never changed. The estimate is stable across 6/12/18-month windows — what you want from a real policy effect rather than noise. The v8 paper uses this only to pin down timing and sign; the magnitude comes from the structural decomposition.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Reduced-form motivation layer</p>
@@ -1595,50 +1595,61 @@ effect, identified by DiDiR.</p>
   (<a href="../an-006-honestdid/">AN-006</a>).</li>
 </ul>
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">¶</a></h2>
-<p>The 18-month DiDiR coefficient on <span class="arithmatex">\(g65 \times \text{Pre}\)</span> is
-−0.1309 (base specification) and −0.1330 (PBU-FE specification), both
-significant at p&lt;0.01 with item-clustered SEs. The 12-month estimate is
-−0.137 to −0.137; the 6-month is −0.131 to −0.144. Magnitudes are stable.</p>
+<p>The canonical reduced-form benchmark is <strong>Table 2</strong> of the v8 manuscript:
+the <span class="arithmatex">\(g65 \times \text{Pre}\)</span> coefficient on <span class="arithmatex">\(\log p^{\mathrm{final}}\)</span> with
+PBU controls, item and month fixed effects, and item-clustered SEs. It is
+stable across windows and implies a <strong>10–11%</strong> price movement at the
+18-month benchmark.</p>
 <table>
 <thead>
 <tr>
 <th>Window</th>
-<th style="text-align: right;">Base coef</th>
-<th style="text-align: right;">PBU-FE coef</th>
+<th style="text-align: right;"><span class="arithmatex">\(g65 \times Pre\)</span></th>
+<th style="text-align: right;">SE</th>
 <th style="text-align: right;">N</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>6m</td>
-<td style="text-align: right;">−0.1311*** (0.0121)</td>
-<td style="text-align: right;">−0.1441*** (0.0116)</td>
+<td style="text-align: right;">−0.148</td>
+<td style="text-align: right;">(0.014)</td>
 <td style="text-align: right;">219,535</td>
 </tr>
 <tr>
 <td>12m</td>
-<td style="text-align: right;">−0.1370*** (0.0107)</td>
-<td style="text-align: right;">−0.1369*** (0.0104)</td>
+<td style="text-align: right;">−0.108</td>
+<td style="text-align: right;">(0.013)</td>
 <td style="text-align: right;">439,054</td>
 </tr>
 <tr>
 <td>18m</td>
-<td style="text-align: right;">−0.1309*** (0.0096)</td>
-<td style="text-align: right;">−0.1330*** (0.0094)</td>
+<td style="text-align: right;">−0.113</td>
+<td style="text-align: right;">(0.012)</td>
 <td style="text-align: right;">649,714</td>
 </tr>
 </tbody>
 </table>
-<p><em>Item FE in all columns; PBU FE in alternating columns. SE clustered at
-item level. *** p&lt;0.01.</em></p>
-<p>Output: <code>output/tables/tab_prices.tex</code>.</p>
+<p><em>Item and month FE; auction-format and log-quantity controls; PBU controls;
+item-clustered SEs. Table 2 in <code>paper.pdf</code>.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Earlier reduced-form pipeline</p>
+<p>The v1–v4 DiDiR pipeline (<code>scripts/02_analysis.R</code> → <code>tab_prices.tex</code>)
+produced slightly larger magnitudes for the same windows (18m: −0.131
+base / −0.133 PBU-FE, item-clustered SEs ~0.009). The v8 benchmark above
+is the canonical reduced-form number; the difference reflects the
+benchmark specification (PBU controls and the reference-price treatment
+used in the structural sample), and is well within the band that
+supports the timing-and-sign reading.</p>
+</div>
 <h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h2>
-<p>The coefficient implies ~13% lower prices under open competition relative
+<p>The coefficient implies ~10–11% lower prices under open competition relative
 to the SME-only regime. The stability across windows is meaningful — short
 windows have less power and more pre-treatment seasonality noise, but the
-estimate barely moves. The PBU-FE specification adds buyer-level controls
-without altering the headline, consistent with the policy switch being
-the variation rather than buyer composition.</p>
+estimate stays in a tight band. Modern DiD estimators (Callaway–Sant'Anna,
+BJS) attenuate the magnitude, consistent with the conservative role assigned
+to the reduced form: it carries timing and sign, not the structural
+magnitude.</p>
 <p>Reading: the lost-discipline channel (non-SMEs removed from the
 price-forming pool) is the load-bearing mechanism. The reduced-form
 DiDiR does not decompose this — see

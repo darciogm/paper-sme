@@ -1527,9 +1527,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-reduced-form-effects-pharma-vs-non-pharma" class="md-nav__link">
+  <a href="#1-reduced-form-effects-within-group-65-falsification" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Reduced-form effects (pharma vs non-pharma)
+      1. Reduced-form effects (within-Group-65 falsification)
     </span>
   </a>
   
@@ -1639,8 +1639,8 @@ than a second headline. Why?</p>
 <p>This AN consolidates pharma-specific evidence across five diagnostic
 margins, comparing each to non-pharma:</p>
 <ol>
-<li><strong>Reduced-form DiDiR</strong> on pharma/non-pharma split and the
-   pharma-interaction term (<code>tab_pharma.tex</code>).</li>
+<li><strong>Within-Group-65 falsification</strong> — medications (CADMAT 6531) vs other
+   medical supplies (online appendix OA-B; <code>tab_within_g65.tex</code>).</li>
 <li><strong>Sample composition</strong> — how many SME firms are new entrants
    post-policy, in pharma vs non-pharma.</li>
 <li><strong>Primitive-invariance KS test</strong> on the drop-out distribution
@@ -1652,47 +1652,41 @@ margins, comparing each to non-pharma:</p>
    specifications.</li>
 </ol>
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">¶</a></h2>
-<h3 id="1-reduced-form-effects-pharma-vs-non-pharma">1. Reduced-form effects (pharma vs non-pharma)<a class="headerlink" href="#1-reduced-form-effects-pharma-vs-non-pharma" title="Permanent link">¶</a></h3>
-<p>From <code>tab_pharma.tex</code>, 18-month window:</p>
+<h3 id="1-reduced-form-effects-within-group-65-falsification">1. Reduced-form effects (within-Group-65 falsification)<a class="headerlink" href="#1-reduced-form-effects-within-group-65-falsification" title="Permanent link">¶</a></h3>
+<p>The canonical reduced-form pharma evidence is the within-Group-65
+falsification reported in the online appendix (OA-B) and
+<a href="../an-027-within-g65-cmed/">AN-027</a>: the CMED-regulated medications
+subclass (CADMAT 6531) versus other Group-65 medical supplies, 18-month
+window, both compared to non-Group-65 controls.</p>
 <table>
 <thead>
 <tr>
 <th>Outcome</th>
-<th style="text-align: right;">Pharma (6531) split</th>
-<th style="text-align: right;">Non-pharma split</th>
-<th style="text-align: right;">Pharma interaction</th>
+<th style="text-align: right;">Medications (6531), base / PBU FE</th>
+<th style="text-align: right;">Other medical supplies, base / PBU FE</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Log prices</td>
-<td style="text-align: right;"><strong>−0.156</strong>*</td>
-<td style="text-align: right;">−0.075***</td>
-<td style="text-align: right;">−0.076***</td>
+<td style="text-align: right;"><strong>−0.166</strong><em> / −0.174</em>**</td>
+<td style="text-align: right;">−0.099<strong><em> / −0.097</em></strong></td>
 </tr>
 <tr>
 <td>Log firms</td>
-<td style="text-align: right;"><strong>+0.165</strong>*</td>
-<td style="text-align: right;">+0.057***</td>
-<td style="text-align: right;">+0.106***</td>
-</tr>
-<tr>
-<td>Log bids</td>
-<td style="text-align: right;"><strong>+0.150</strong>*</td>
-<td style="text-align: right;">+0.030***</td>
-<td style="text-align: right;">+0.119***</td>
-</tr>
-<tr>
-<td>Distance (km)</td>
-<td style="text-align: right;">+10.28**</td>
-<td style="text-align: right;">+3.34*</td>
-<td style="text-align: right;">+7.22 (n.s.)</td>
+<td style="text-align: right;"><strong>+0.152</strong><em> / +0.161</em>**</td>
+<td style="text-align: right;">+0.044<strong><em> / +0.050</em></strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Pharma reduced-form effects are 2–5× larger than non-pharma.</strong> The
-pharma-interaction term confirms statistical separation on prices,
-firms, and bids.</p>
+<p><strong>The regulated-medications cell is larger in magnitude</strong> (price −0.166
+vs −0.099; firms +0.152 vs +0.044) but the effect is present and
+significant in <em>both</em> subclasses — a confounder operating only through
+CMED-regulated medicines would not move the non-medication cell. CMED
+ceilings <em>cap</em> prices, so contamination would attenuate the medications
+coefficient, not amplify it. The larger medications magnitude is
+consistent with deeper non-SME pharmaceutical bidder pools, not pharma
+inflation.</p>
 <h3 id="2-structural-decomposition-pharma-cell">2. Structural decomposition (pharma cell)<a class="headerlink" href="#2-structural-decomposition-pharma-cell" title="Permanent link">¶</a></h3>
 <p>Recovered from <code>values.tex</code>:</p>
 <table>
@@ -1707,17 +1701,17 @@ firms, and bids.</p>
 <tr>
 <td><span class="arithmatex">\(S_1\)</span> (open pre)</td>
 <td style="text-align: right;">0.654</td>
-<td style="text-align: right;">0.770</td>
+<td style="text-align: right;">0.774</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(S_2\)</span> (SME-only, pre-pool fixed)</td>
 <td style="text-align: right;">1.219</td>
-<td style="text-align: right;">1.110</td>
+<td style="text-align: right;">1.144</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(S_3\)</span> (SME-only, post-pool)</td>
 <td style="text-align: right;">0.963</td>
-<td style="text-align: right;">1.002</td>
+<td style="text-align: right;">1.000</td>
 </tr>
 <tr>
 <td>Lost-discipline (S₂−S₁)</td>
@@ -1883,8 +1877,8 @@ specifications; non-pharma is stable.</strong> From
 <a href="../an-024-lambda-welfare-ci/">AN-024</a>, this flip is <em>not</em> driven by
 λ — the pharma flip is constant across the entire λ ∈ [0.15, 0.45]
 grid within each spec.</p>
-<p>Output: <code>output/tables/tab_pharma.tex</code>,
-<code>v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex</code>, and welfare
+<p>Output: within-Group-65 falsification <code>tab_within_g65.tex</code> (OA-B);
+<code>v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex</code> (counts); welfare
 macros in <code>v8-jpube/output/values.tex</code>.</p>
 <h2 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">¶</a></h2>
 <p><strong>Pharma is structurally different on four dimensions</strong> that

@@ -1576,8 +1576,9 @@ v8 result is the structural counterfactual decomposition — see
 <p>The DiDiR coefficient identifies the open-vs-SME-only effect <em>if</em>
 parallel trends hold. HonestDiD asks the weaker question: how big a
 violation of parallel trends would be required to make the price effect
-statistically insignificant? Robust CIs survive larger violations
-provide stronger evidence the result is not an artifact.</p>
+statistically insignificant? The larger the violation the robust CIs can
+absorb while still excluding zero, the stronger the evidence that the
+result is not an artifact of differential pre-trends.</p>
 <h2 id="design">Design<a class="headerlink" href="#design" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Sample</strong>: same as <a href="../an-001-didir-prices/">AN-001</a>, 18-month window.</li>

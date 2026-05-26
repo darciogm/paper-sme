@@ -1510,9 +1510,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#welfare-cost-v6" class="md-nav__link">
+  <a href="#welfare-cost" class="md-nav__link">
     <span class="md-ellipsis">
-      Welfare Cost (v6)
+      Welfare Cost
     </span>
   </a>
   
@@ -1647,9 +1647,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#welfare-cost-v6" class="md-nav__link">
+  <a href="#welfare-cost" class="md-nav__link">
     <span class="md-ellipsis">
-      Welfare Cost (v6)
+      Welfare Cost
     </span>
   </a>
   
@@ -1671,15 +1671,24 @@
 
 
 <h1 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">¶</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Where this sits in v8</p>
+<p>The first five extensions below are <strong>reduced-form-layer</strong> checks on the
+broader panel — they support the timing-and-sign benchmark, not the headline.
+The canonical v8 policy result is the structural decomposition and welfare
+comparison (<a href="../results/">Results</a>); the <strong>Welfare cost</strong> section at the
+bottom reports the v8 annualized figures.</p>
+</div>
 <div class="admonition abstract">
 <p class="admonition-title">Intuition (plain-language)</p>
-<p>These extensions poke at the same mechanism from different sides. Is
-the price effect real or just inflation? (Deflated prices look
-identical.) Does opening tenders change who wins? (Fewer SMEs win —
-exactly what a competition story predicts.) Does the government get
-better deals against its own reference price? (Yes.) None is the
-headline; together they triangulate that open competition, not an
-accounting quirk, drives the result.</p>
+<p>These extensions poke at the same mechanism from different angles. Is the
+effect real or just inflation? (Deflated prices look identical.) Does opening
+tenders change who wins? (Fewer SMEs win — exactly what a competition story
+predicts.) Does the government get better deals against its own reference
+price? (Yes.) And the welfare arithmetic puts a number on it: about 29% of
+the open price per auction, R$38–89 million a year on this one product group.
+None of the first five is the headline; the welfare cost is the substantive
+payoff.</p>
 </div>
 <h2 id="ipca-deflated-real-prices">IPCA-Deflated Real Prices<a class="headerlink" href="#ipca-deflated-real-prices" title="Permanent link">¶</a></h2>
 <p>Using IPCA-deflated (real) prices yields patterns virtually identical to the nominal results, confirming that the price effects reflect real differences in procurement costs rather than differential inflation across product groups.</p>
@@ -1696,17 +1705,12 @@ accounting quirk, drives the result.</p>
 <h2 id="heterogeneity-by-pbu-type">Heterogeneity by PBU Type<a class="headerlink" href="#heterogeneity-by-pbu-type" title="Permanent link">¶</a></h2>
 <p>Interacting the treatment indicator with a direct administration dummy reveals broadly similar effects across buyer types (direct administration vs. indirect administration entities), suggesting that the competition channel operates consistently across the institutional landscape.</p>
 <hr>
-<h2 id="welfare-cost-v6">Welfare Cost (v6)<a class="headerlink" href="#welfare-cost-v6" title="Permanent link">¶</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">Intuition (plain-language)</p>
-<p>Here the page graduates from "prices changed" to "how much was lost."
-The welfare cost adds real allocative waste (a higher-cost firm wins)
-to the deadweight of financing the bigger bill through taxes, at the
-standard λ = 0.30. That is about 29% of the open price for ordinary
-goods, more for pharma — translating to R<span class="arithmatex">\(55–128 million a year on
-group 65 alone, one slice of a R\)</span>13 billion procurement platform.</p>
-</div>
-<p>The v6 manuscript replaces the v4 back-of-the-envelope fiscal calculation with a structural welfare arithmetic. The per-auction welfare loss combines the allocative wedge <span class="arithmatex">\(\text{DWL}_{\text{alloc}} = c_{(1)}^{S_3} - c_{(1)}^{S_1}\)</span> with an MCPF distortion <span class="arithmatex">\(\lambda \cdot (p_{S_3} - p_{S_1})\)</span> at <span class="arithmatex">\(\lambda = 0.30\)</span> (Ballard--Shoven--Whalley benchmark).</p>
+<h2 id="welfare-cost">Welfare Cost<a class="headerlink" href="#welfare-cost" title="Permanent link">¶</a></h2>
+<p>The structural welfare arithmetic combines the allocative wedge
+<span class="arithmatex">\(\text{DWL}_{\text{alloc}} = c_{(1)}^{S_3} - c_{(1)}^{S_1}\)</span> with an MCPF
+distortion <span class="arithmatex">\(\lambda \cdot (p_{S_3} - p_{S_1})\)</span> at <span class="arithmatex">\(\lambda = 0.30\)</span>
+(Ballard–Shoven–Whalley benchmark; updated MCPF frameworks in Hendren 2020 and
+Finkelstein–Hendren 2020).</p>
 <table>
 <thead>
 <tr>
@@ -1720,15 +1724,19 @@ group 65 alone, one slice of a R\)</span>13 billion procurement platform.</p>
 <td style="text-align: center;"><strong>28.9%</strong></td>
 </tr>
 <tr>
-<td>Pharma</td>
+<td>Pharma <em>(boundary)</em></td>
 <td style="text-align: center;"><strong>44.8%</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Translated to annual public-finance units on Group~65 alone, the welfare cost spans **R<span class="arithmatex">\(55--128 million per year** (US\)</span>16--37M): R<span class="arithmatex">\(55M is the realistic central case at the empirically observed adherence rate; R\)</span>128M is the upper bound under full SME-eligible adherence. This is one product group of São Paulo's R$13 billion procurement platform.</p>
+<p>Translated to annual public-finance units on Group&nbsp;65 alone, the welfare
+cost spans <strong>R<span class="arithmatex">\(38–89 million per year** (US\)</span>11–25M) across the </strong>30–70%**
+adherence range, against a Group-65 annual reference outlay of roughly R<span class="arithmatex">\(345M
+(non-pharma) and R\)</span>363M (pharma). This is one product group of São Paulo's
+R$13 billion procurement platform.</p>
 <div class="key-result">
-<p><span class="number">R$ 55--128 M / yr</span>
-<span class="label">v6 annual welfare cost of bidder exclusion on Group 65, at λ = 0.30, across the empirical adherence range. (Earlier v4 reduced-form back-of-envelope gave R$84.5--85.8M as the 18-month <em>fiscal</em> cost — a different object, superseded.)</span></p>
+<p><span class="number">R$ 38–89 M / yr</span>
+<span class="label">v8 annual static welfare cost of bidder exclusion on Group 65, at λ = 0.30, across the 30–70% adherence range (US$11–25M). The headline per-auction loss is 28.9% of the open-regime price in standardized non-pharmaceutical procurement.</span></p>
 </div>
 
 
@@ -1736,6 +1744,9 @@ group 65 alone, one slice of a R\)</span>13 billion procurement platform.</p>
 
 
 
+
+  
+  
 
 
 
